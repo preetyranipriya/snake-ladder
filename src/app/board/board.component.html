@@ -1,0 +1,35 @@
+
+<div class="board-container">
+  <div class="board">
+    
+    <div *ngFor="let square of squares; let i = index" class="square" [ngClass]="{
+      
+      'green-background': endSnakes.includes(square) ,
+      'yellow-background':endStair.includes(square)
+    }">
+      
+     
+    
+      <!-- <span *ngIf="players[0] === i" class="player player1"></span>
+      <span *ngIf="players[1] === i" class="player player2"></span> -->
+      <img *ngIf="players[0] === square" src="assets/red.jpg" alt="Player 1" class="player-image player1">
+      <img *ngIf="players[1] === square" src="assets/blue.jpg" alt="Player 2" class="player-image player2">
+      <img *ngIf="snakesAndLadders[square] && snakesAndLadders[square] < square" src="assets/snake.jpg" alt="Snake" class="snake-ladder-image">
+      <img *ngIf="snakesAndLadders[square] && snakesAndLadders[square] > square" src="assets/ladder.jpg" alt="Ladder" class="snake-ladder-image">
+      {{ square }}
+    </div>
+  </div>
+</div>
+<div class="dice-container">
+  <img class="dice" *ngIf="rolledNumber == null" [src]="'assets/dice/dice1.jpg'" alt="Dice" (click)="rollAndMove()">
+  <img class="dice" *ngIf="rolledNumber !== null" [src]="'assets/dice/dice' + rolledNumber + '.jpg'" alt="Dice" [ngClass]="{'red': currentPlayer === 0, 'blue': currentPlayer === 1}" (click)="rollAndMove()">
+</div>
+<div *ngIf="winnerImage" class="winner-message">
+  <img [src]="winnerImage" alt="Winner" class="winner-image">
+  <p>Hurray! Player {{ currentPlayer + 1 }} won the game!</p>
+</div>
+
+
+
+  
+

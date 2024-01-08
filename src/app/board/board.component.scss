@@ -1,0 +1,104 @@
+.board-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.dice-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 5px;
+  margin-top: 5px;
+  
+}
+.landed-on-snake {
+  /* Green color for the square where the player lands after hitting a snake */
+  border: 2px solid #ff0000;
+  background-color: #00ff00; /* Change to your preferred green color */
+}
+.square.green-background {
+  background-color: #d86a6a; /* Green background color for the specified condition, change as needed */
+}
+.square.yellow-background
+{ 
+  background-color: #e4e47e;
+}
+
+.landed-on-ladder {
+  /* Yellow color for the square where the player lands after climbing a ladder */
+  background-color: #ffff00; /* Change to your preferred yellow color */
+}
+
+.dice.red
+{ 
+  background-color: rgb(240, 9, 9);
+}
+.dice.blue
+{ 
+  background-color: rgb(94, 39, 235);
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(10, 50px); /* Adjust the width for the board */
+  grid-gap: 5px;
+  width: 500px; /* Adjust the width for the board */
+  height: 500px; /* Adjust the height for the board */
+}
+
+.square {
+  position: relative;
+  border: 1px solid #000;
+  width: 50px; /* Adjust the square width */
+  height: 50px; /* Adjust the square height */
+  text-align: center;
+ 
+}
+
+
+
+.player {
+  position: absolute;
+  width: 20px; /* Adjust the player width */
+  height: 20px; /* Adjust the player height */
+  border-radius: 50%;
+}
+
+.player1 {
+  width: 55%;
+  height: 55%;
+}
+
+.player2 {
+  width: 55%;
+  height: 55%;
+}
+
+.dice {
+  width: 50px; /* Adjust the dice width */
+  height: 50px; /* Adjust the dice height */
+  cursor: pointer;
+}
+.snake-ladder-image {
+  width: 60%;
+  height: 60%; /* Adjust the width of the snake and ladder images */
+   /* Maintain aspect ratio */
+   
+}
+/* Add this in your board.component.scss */
+.winner-message {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.winner-image {
+  width: 150px; /* Adjust the size as needed */
+  height: 150px;
+  margin-bottom: 10px;
+}
+
